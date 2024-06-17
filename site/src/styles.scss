@@ -1,1 +1,161 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the theme object.
+$site-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+:root {
+  @include mat.all-component-themes($site-theme);
+}
+
+// Comment out the line below if you want to use the pre-defined typography utility classes.
+// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+// @include mat.typography-hierarchy($site-theme);
+
+// Comment out the line below if you want to use the deprecated `color` inputs.
+// @include mat.color-variants-backwards-compatibility($site-theme);
+@import "app/styles/media-mixins";
+@import "app/styles/normalize";
+@import "app/styles/vars";
+
+::placeholder {
+  color: var(--text);
+}
+
+::selection {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+
+input, textarea, button {
+  outline: none;
+  color: var(--placeholder-color);
+  border: none;
+  font-family: var(--font-accent);
+
+  &:focus:required:invalid {
+    border-color: var(--invalid-color);
+  }
+
+  &:required:valid {
+    border-color: var(--valid-color);
+  }
+}
+
+input, textarea {
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+
+  &::placeholder {
+    color: var(--placeholder-color);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+html {
+  height: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-size: 16px;
+  position: relative;
+  line-height: 1.2;
+  background-color: var(--white-color);
+  font-family: var(--font-accent);
+  font-weight: 400;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  color: var(--text);
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+
+  &._locked {
+    overflow: hidden;
+  }
+}
+
+picture, img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.main {
+  padding: 40px 0;
+  height: 100%;
+}
+
+.container {
+  max-width: 1370px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 0 15px;
+
+  &_sm {
+    max-width: 1100px;
+  }
+}
+
+.title {
+  font-size: 22px;
+  color: var(--title);
+  font-weight: 500;
+}
+
+.c-sc {
+  color: var(--second-color);
+}
+
+.fw-n {
+  font-weight: 400;
+}
+
+.fw-sb {
+  font-weight: 500;
+}
+
+.c-valid {
+  color: var(--valid-color);
+}
+
+.c-invalid {
+  color: var(--invalid-color);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,10 @@
+<ng-container *ngIf="hasContent">
+    <ng-content></ng-content>
+</ng-container>
+
+<span
+    *ngIf="!hasContent && text"
+    class="ls-button__text _{{kind}} _{{palette}}"
+>
+    {{ text }}
+</span>

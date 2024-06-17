@@ -1,0 +1,56 @@
+@mixin bp375 {
+  @media screen and (min-width: 375px) {
+    @content
+  }
+}
+
+@mixin bp540 {
+  @media screen and (min-width: 540px) {
+    @content
+  }
+}
+
+
+@mixin bp768 {
+  @media screen and (min-width: 768px) {
+    @content
+  }
+}
+
+
+@mixin bp1024 {
+  @media screen and (min-width: 1024px) {
+    @content
+  }
+}
+
+
+@mixin bp1280 {
+  @media screen and (min-width: 1280px) {
+    @content
+  }
+}
+
+@mixin bp1440 {
+  @media screen and (min-width: 1440px) {
+    @content
+  }
+}
+
+@mixin bp1680 {
+  @media screen and (min-width: 1680px) {
+    @content
+  }
+}
+
+@mixin bp1920 {
+  @media screen and (min-width: 1920px) {
+    @content
+  }
+}
+
+@mixin bp2500 {
+  @media screen and (min-width: 2500px) {
+    @content
+  }
+}

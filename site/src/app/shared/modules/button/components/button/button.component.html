@@ -1,0 +1,28 @@
+<button
+  class="as-button as-button_{{palette}} as-button_{{kind}}"
+  [disabled]="disabled"
+  [type]="type"
+  (click)="click()"
+  (keydown)="keyDown($event)"
+  (keyup)="keyUp($event)"
+  (focus)="focus()"
+  [style.width]="width"
+>
+  <as-button-content
+    class="as-button__content"
+    [class._loading]="isLoading"
+    [kind]="kind"
+    [palette]="palette"
+    [text]="text"
+    [style.width]="width"
+  >
+    <span #content class="as-button__text">
+        <ng-content></ng-content>
+    </span>
+  </as-button-content>
+
+  <!--        <ls-ui-loader-->
+  <!--            *ngIf="isLoading"-->
+  <!--            class="ls-button__loader"-->
+  <!--        ></ls-ui-loader>-->
+</button>
